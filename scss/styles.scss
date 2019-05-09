@@ -1,0 +1,82 @@
+//Components
+
+@import "components/typography";
+@import "components/normalize";
+@import "components/grid";
+
+// colors
+
+$power-red:#cb361d;
+$power-grey: #4d4d4d;
+$power-light-grey: #bcbcbc;
+$power-black: #000000;
+$power-white: #ffffff;
+
+// font
+
+// $font-family-cn: 'Trade Gothic LT Std Cn18';
+$font-family: 'filson-soft';
+$font-weight-book: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-height: 1.5;
+
+// universal
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+  font-family: $font-family;
+  font-weight: $font-weight-book;
+  color: $power-grey;
+  line-height: $font-height;
+}
+
+a {
+  color: $power-red;
+  text-decoration: none;
+}
+
+a, img {
+  border:none;
+  outline:none;
+  display: block;
+}
+
+svg {
+  width: 100%;
+  display: block;
+}
+
+img, img[src*=".svg"] {
+  width: 100%;
+}
+
+// typography
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+p {
+}
