@@ -25,7 +25,7 @@ gulp.task('sass', function () {
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(rename({suffix:'.min'}))
-    // .pipe(cleanCSS({compatibility: 'ie8'})) //remove if you want reqular expanded css output.
+    .pipe(cleanCSS({compatibility: 'ie8'})) //remove if you want reqular expanded css output.
     .pipe(gulp.dest('css'));
 });
 

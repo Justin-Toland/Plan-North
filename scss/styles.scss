@@ -108,7 +108,7 @@ p {
 #plan-north {
   position: absolute;
   top: 20px;
-  right: 45px;
+  right: 20px;
   h1 {
     font-size: 2.5em;
     font-weight: $font-semi-bold;
@@ -126,7 +126,7 @@ p {
 
 // navigation
 
-#menu {
+#main-nav {
   position: absolute;
   top: 20px;
   left: 40px;
@@ -148,7 +148,7 @@ p {
       display: inline-block;
       float: left;
       &.active {
-        border-bottom: 1px solid $blue;
+        border-bottom: 5px solid $blue;
       }
       a {
         padding: 10px 20px;
@@ -160,19 +160,99 @@ p {
     }
   }
 }
+
+#mobile-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: $white;
+  width: 225px;
+  height: 0;
+  overflow: hidden;
+  transition: height .5s ease-in-out;
+  z-index: 2;
+  ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    padding: 75px 0 30px 0;
+    li {
+      width: 100%;
+      padding: 10px 0 10px 40px;
+      &.active {
+        a {
+          color: $blue;
+        }
+      }
+      a {
+        transition: color .35s ease-in-out;
+      }
+    }
+  }
+  &.active {
+    height: 325px;
+  }
+}
+
+#hamburger-wrapper {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 3;
+  .nav-icon {
+    width: 30px;
+  }
+
+  .nav-icon::after,
+  .nav-icon::before,
+  .nav-icon div {
+    background-color: white;
+    content: '';
+    display: block;
+    height: 6px;
+    margin: 4px 0;
+    transition: all .2s ease-in-out;
+  }
+
+  .nav-icon.active::before {
+    transform: translateY(10px) rotate(135deg);
+  }
+
+  .nav-icon.active::after {
+    transform: translateY(-10px) rotate(-135deg);
+  }
+
+  .nav-icon.active div {
+    transform: scale(0);
+  }
+}
+
 // Fullpage.JS styleing and overrides
 
 .fp-slidesNav { // Slides navigation
   text-align: center
 }
 
+#fp-nav.fp-right {
+  right: 9px;
+}
 
 // Landing section
 
 #landing {
   img {
-    width: 450px;
-    height: 346px;
+    max-width: 450px;
+    max-height: 346px;
     margin: 0 auto;
   }
 }
@@ -200,7 +280,7 @@ ul.grid-nav {
   }
 }
 
-.grid-flex-container {
+.services-flex-container {
   position: relative;
   padding: 0;
   margin: 0;
@@ -215,8 +295,9 @@ ul.grid-nav {
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
   align-items: stretch;
-  .grid-flex-item {
-    background: rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  .services-flex-item {
+    background: rgba($white, 0.10);
     min-height: 225px;
     color: white;
     margin: 5px;
@@ -227,7 +308,7 @@ ul.grid-nav {
     &:nth-child(3) {
     }
     &:nth-child(4) {
-      background: #009EC9;
+      background: rgba($blue, 0.7);
       padding: 10px 40px;
       min-height: 287px;
     }
@@ -239,11 +320,9 @@ ul.grid-nav {
       display: block;
       height: 100%;
       width: 100%;
-      background-image: url('https://beta.power-viz.com/plannorth/images/residentail.jpg');
+      background-image: url('../images/residential.jpg');
       background-size: 1200px;
       background-repeat: no-repeat;
-      background-position: 50% -150px;
-      background-attachment: fixed;
     }
   }
   .fifty {
@@ -251,6 +330,9 @@ ul.grid-nav {
   }
   .twenty-five {
     width: calc(25% - 10px);
+  }
+  h2 {
+    font-weight: 600;
   }
   img {
     display: none;
@@ -261,71 +343,316 @@ ul.grid-nav {
     font-weight: 300;
   }
 }
+.mobile-image {
+  display: none;
+  padding: 5px;
+}
 
 // Process section
 
-.process-details {
-  background: rgba($white, 0.10);
-  padding: 25px;
-  overflow: hidden;
-  min-height: 270px;
-  display: none;
-  h2 {
+.process-details-container {
+  padding-left: 5px;
+  .process-details {
+    background: rgba($white, 0.10);
+    padding: 25px;
+    overflow: hidden;
+    min-height: 270px;
+    position: relative;
+    display: none;
+    &:first-child {
+      display: block;
+    }
+    img {
+      display: none;
+    }
+    h2 {
+      font-weight: $font-semi-bold;
+      margin-top: 0;
+      color: $blue;
+    }
+    p {
+      font-size: .7em;
+      line-height: 2em;
+      margin: 0;
+      text-transform: none;
+    }
+    span {
+      position: absolute;
+      bottom: -16px;
+      left: -4px;
+      font-size: 7em;
+      color: rgba(255,255,255,.2);
+      font-weight: $font-semi-bold;
+    }
+  }
+  .process-col {
+    width: calc(50% - 5px);
+    float: left;
+    &.left {
+      margin-right: 5px;
+    }
+    &.right {
+      margin-left: 5px;
+    }
+  }
+  .process-button {
+    width: 100%;
+    height: 3.36em;
+    background: rgba($white, 0.10);
+    font-weight: 600;
+    margin: 10px 0;
+    padding: 0 20px 0 0;
+    display: table;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition:: background .35s ease-in-out;
+    transition: background .35s ease-in-out;
     font-weight: $font-semi-bold;
-    margin-top: 0;
-    color: $blue;
-  }
-  p {
-    font-size: .7em;
-    line-height: 2em;
-    margin: 0;
-    text-transform: none;
+    &:hover {
+      background: rgba($blue, 0.7);
+    }
+    &.active {
+      background: rgba($blue, 0.7);
+    }
+    & > span {
+      font-size: .8em;
+      font-weight: $font-semi-bold;
+      line-height: 1.2em;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+    }
+    span + span {
+      position: absolute;
+      bottom: -7px;;
+      left: 0;
+      font-size: 2em;
+      color: rgba($white, 0.2);
+    }
   }
 }
-.process-col {
-  width: calc(50% - 5px);
-  float: left;
-  &.left {
-    margin-right: 5px;
-  }
-  &.right {
-    margin-left: 5px;
-  }
-}
-.process-button {
-  width: 100%;
-  height: 3.1em;
-  background: rgba($white, 0.10);
-  font-weight: 600;
-  margin: 10px 0;
-  padding: 0 20px;
-  display: table;
+.process-flex-container {
   position: relative;
-  cursor: pointer;
-  transition: color .35s ease-in-out;
-  font-weight: $font-semi-bold;
-  &:hover {
-    color: $blue;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  .process-flex-item {
+    background: rgba(255, 255, 255, 0.1);
+    min-height: 225px;
+    margin: 5px;
+    width: calc(50% - 10px);
+    &:nth-child(-n+2) {
+      margin-top: 0;
+    }
+    &:nth-child(n+3) {
+      margin-bottom: 0;
+    }
+    & > div {
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-image: url('../images/inquiry.jpg');
+      background-size: 700px;
+      background-repeat: no-repeat;
+    }
   }
-  &.active {
-    color: $blue;
+}
+
+// Projects Section
+
+.siema-wrapper {
+  background: rgba(255,255,255,.1);
+  .siema {
+    width: 100%;
+    margin: 0 auto;
   }
-  > span {
-    font-size: .8em;
-    font-weight: $font-semi-bold;
-    line-height: 1.2em;
+}
+
+
+$controls-margin: 5px;
+
+.slider-controls {
+  display: table;
+  margin: 15px auto 0 auto;
+  height: 25px;
+  & > * {
     display: table-cell;
     vertical-align: middle;
-    text-align: right;
   }
-  span + span {
-    position: absolute;
-    bottom: -7px;;
-    left: 0;
-    font-size: 2em;
-    color: rgba($white, 0.2);
+  .bullets {
+    span {
+      width: 13px;
+      height: 13px;
+      border: solid 2px #ffffff;
+      display: inline-block;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      margin: 0 $controls-margin;
+      position: relative;
+      cursor: pointer;
+      &.active {
+        background: #ffffff;
+      }
+      > span {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        margin: 0;
+      }
+    }
+  }
+  .prev, .next {
+    border: none;
+    outline: none;
+    background: none;
+    color: #FFFFFF;
+    width: 25px;
+    padding: 0;
+    cursor: pointer;
   }
 }
+
+.gallery-thumbnail-container {
+  .gallery-thumbnail {
+    background: $blue;
+    width: 105px;
+    height: 100px;
+    float: left;
+    margin: 5px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 2em;
+    cursor: pointer;
+    &.active {
+      outline: solid 5px $blue;
+    }
+    &:nth-child(1){
+      background: url('../images/gallery/Beyster/01.jpg') no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(2){
+      background: url('../images/gallery/Christopher/01.jpg') no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(3){
+      background: url('../images/gallery/Freeman/01.jpg') no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(4){
+      background: url('../images/gallery/Higgens/01.jpg') no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(5){
+      background: url('../images/gallery/Response_Church/01.jpg') no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(6){
+      background: url('../images/gallery/Martis/01.jpg') no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
+$description-margin: 5px 0;
+.gallery-description {
+  float: left;
+  padding: 5px;
+  #header {
+    margin: $description-margin;
+
+  }
+  #client {
+    margin: $description-margin;
+    color: $blue;
+  }
+  #description {
+    margin: $description-margin;
+    font-size: 0.6em;
+  }
+}
+
+.loading {
+    color: transparent!important;
+    min-height: 2.5rem;
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -2rem;
+  &:after {
+    animation: loading .5s infinite linear;
+    border: .1rem solid $blue;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content: "";
+    display: block;
+    height: 2rem;
+    left: 50%;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//  Map section1
+
+#map-section {
+  h3 {
+    font-size: 1em;
+    clear: both;
+    border-bottom: solid 3px rgba(255,255,255,.3);
+    line-height: 1.6rem;
+    margin-bottom: 10px;
+    float: left;
+    clear: both;
+    &:nth-child(1) {
+      margin-top: 0;
+      border-bottom: solid 3px #009ec9;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    li {
+      font-size: .65em;
+      line-height: 1.5em;
+    }
+    div {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+
 // Contact section
 
 #contact-section {
@@ -394,6 +721,7 @@ ul.grid-nav {
   }
   .col-7 {
     position: relative;
+    padding-right: 1rem;
   }
   .col-5 {
     text-align: center;
@@ -457,4 +785,97 @@ footer {
   width: 100%;
   text-align: center;
   font-size: .5em;
+}
+
+@media only screen and (max-width: 1100px) {
+  #main-nav {
+    ul {
+      display: none;
+    }
+  }
+  #hamburger-wrapper {
+    display: block;
+  }
+  #plan-north {
+    h1 {
+      font-size: 2em;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ul.services-flex-container li {
+    display: none;
+  }
+  ul.services-flex-container li.details {
+    display: block;
+    width: 100%;
+  }
+  .mobile-image {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  ul.services-flex-container li {
+    display: none;
+  }
+  ul.services-flex-container li.details {
+    display: block;
+    width: 100%;
+  }
+  .process-container {
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+    .process-details-container {
+      order: 2;
+    }
+    .process-image {
+      order: 1;
+    }
+  }
+  .contact-flex {
+    display: flex;
+    flex-direction: column;
+    & > div:first-child {
+      order: 2;
+    }
+    & > div:last-child {
+      order: 1;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .process-container {
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+    .process-details-container {
+      order: 2;
+    }
+    .process-image {
+      order: 1;
+    }
+  }
+  .process-details-container {
+    padding: 0;
+    .process-button {
+      height: 2.66em;
+      & > span {
+        font-size: 0.6em;
+      }
+    }
+    .process-details {
+      min-height:0;
+      padding: 10px 25px;
+      h2 {
+        font-size: 1em;
+      }
+    }
+  }
 }

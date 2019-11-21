@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PLANNORTH</title>
-    <meta name="author" content="Justin Toland" />
-    <meta name="description" content="Plan North Engineering" />
-    <meta name="keywords"  content="Residentail Engineering, Commercial Engineering, Industrial Engieering, Compenent Design, Hospitatlity, Modular, Engineering" />
-    <meta name="Resource-type" content="Document" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.min.css">
-    <!--[if IE]>
-        <script type="text/javascript">
-             var console = { log: function() {} };
-        </script>
-    <![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>PLANNORTH</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Justin Toland" />
+  <meta name="description" content="Plan North Engineering" />
+  <meta name="keywords"  content="Residentail Engineering, Commercial Engineering, Industrial Engieering, Compenent Design, Hospitatlity, Modular, Engineering" />
+  <meta name="Resource-type" content="Document" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.min.css">
+  <!--[if IE]>
+      <script type="text/javascript">
+           var console = { log: function() {} };
+      </script>
+  <![endif]-->
+  <style>
+    #callbacksDiv p{
+      font-size:1.2em;
+    }
+    #callbacksDiv h4{
+        font-size: 1.4em;
+        font-weight: bold;
+        color: white;
+        text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -25,15 +40,33 @@
    </h1>
   </div>
 </header>
+<div style="position:fixed;top:50px;left:50px;color:white;z-index:999;" id="callbacksDiv"></div>
 
-<nav id="menu">
+<nav id="main-nav">
   <ul>
-    <li data-menuanchor="Services" class="active"><a href="#Services">Services</a></li>
+    <li data-menuanchor="Top"><a href="#Top">Top</a></li>
+    <li data-menuanchor="Services"><a href="#Services">Services</a></li>
     <li data-menuanchor="Process"><a href="#Process">Process</a></li>
     <li data-menuanchor="Projects"><a href="#Projects">Projects</a></li>
+    <li data-menuanchor="Map"><a href="#Map">License Map</a></li>
     <li data-menuanchor="Contact"><a href="#Contact">Contact</a></li>
   </ul>
 </nav>
+<div id="hamburger-wrapper">
+  <div class="nav-icon ">
+    <div></div>
+  </div>
+</div>
+<div id="mobile-nav">
+  <ul>
+    <li data-menuanchor="Top"><a href="#Top">Top</a></li>
+    <li data-menuanchor="Services"><a href="#Services">Services</a></li>
+    <li data-menuanchor="Services"><a href="#Process">Process</a></li>
+    <li data-menuanchor="Services"><a href="#Projects">Projects</a></li>
+    <li data-menuanchor="Services"><a href="#Map">License Map</a></li>
+    <li data-menuanchor="Services"><a href="#Contact">Contact</a></li>
+  </ul>
+</div>
 <div id="fullpage">
     <div class="section" id="landing">
       <div class="container">
@@ -47,7 +80,7 @@
     <div class="section" id="section1">
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12" style="margin: 2rem .5rem">
             <ul class="grid-nav">
               <li class="active"><a href="#">Residential</a></li>
               <li><a href="#">Commercial</a></li>
@@ -55,61 +88,76 @@
               <li><a href="#">Component Design</a></li>
               <li><a href="#">Modular</a></li>
             </ul>
-            <ul class="grid-flex-container">
-              <li class="grid-flex-item twenty-five shuffle-top"><div></div></li>
-              <li class="grid-flex-item twenty-five shuffle-top"><div></div></li>
-              <li class="grid-flex-item fifty shuffle-top"><div></div></li>
-              <li class="grid-flex-item details fifty shuffle-bottom">
-                <img class="residential" src="https://beta.power-viz.com/plannorth/images/residentail.jpg" alt="Residential">
+            <div class="mobile-image">
+              <img src="images/residential.jpg" alt="Residential">
+            </div>
+            <ul class="services-flex-container">
+              <li class="services-flex-item twenty-five services-shuffle-top"><div></div></li>
+              <li class="services-flex-item twenty-five services-shuffle-top"><div></div></li>
+              <li class="services-flex-item fifty services-shuffle-top"><div></div></li>
+              <li class="services-flex-item details fifty services-shuffle-bottom">
+                <img class="residential" src="images/residential.jpg" alt="Residential">
                 <h2 class="residential">RESIDENTIAL</h2>
                 <p class="residential">Experts in the field of residential structural engineering. Our experience spansfrom deep snow of ski resort towns, to the shaking earthquakes of SouthernCalifornia and the hurricane prone regions of Florida. Whether your project issingle family, multi-family, or condominiums, when you work with Plan NorthEngineers, you are getting the right experience for your project. Have additionalquestions, or not sure if your projects fit into our profile? Give us a call or sendus an email.</p>
-                <img class="commercial" src="https://beta.power-viz.com/plannorth/images/commercial.jpg" alt="Commercial">
+                <img class="commercial" src="images/commercial.jpg" alt="Commercial">
                 <h2 class="commercial hidden">COMMERCIAL</h2>
                 <p class="commercial hidden">Commercial projects are unique, fast paced, and competitive. If your projectrequires an engineer with those same qualities.</p>
-                <img class="industrial" src="https://beta.power-viz.com/plannorth/images/industrial.jpg" alt="Industrial">
+                <img class="industrial" src="images/industrial.jpg" alt="Industrial">
                 <h2 class="industrial hidden" >INDUSTRIAL</h2>
                 <p class="industrial hidden">Plan North Engineers has extensive experience working on and within industrialbuildings. If you are needing a building designed, renovated, or prepped for theinstallation of new equipment in your existing facility, we have the experiencenecessary to make your project successful.</p>
-                <img class="component" src="https://beta.power-viz.com/plannorth/images/component.jpg" alt="Component Design">
+                <img class="component" src="images/component.jpg" alt="Component Design">
                 <h2 class="component hidden">COMPONENT DESIGN</h2>
                 <p class="component hidden">Not looking for an engineer to design your entire building? No problem, PlanNorth Engineers also offers component design services, these include bracing,seismic anchorage, equipment access, sanitary platforms, safety systems,signage, site walls, retaining walls, and more.</p>
-                <img class="modular" src="https://beta.power-viz.com/plannorth/images/modular.jpg" alt="Modular">
+                <img class="modular" src="images/modular.jpg" alt="Modular">
                 <h2 class="modular hidden">MODULAR</h2>
                 <p class="modular hidden">The craze of modular construction is real, and Plan North Engineers has theexperience necessary to help your project be successful. With experiencespanning the logistics of site built versus modular, to working with the fabricatorto bring the design to life, we are the right choice when it comes to modular.And with our expansive licensure, you won’t need another engineer.</p>
               </li>
-              <li class="grid-flex-item twenty-five shuffle-bottom"><div></div></li>
-              <li class="grid-flex-item twenty-five shuffle-bottom"><div></div></li>
+              <li class="services-flex-item twenty-five services-shuffle-bottom"><div></div></li>
+              <li class="services-flex-item twenty-five services-shuffle-bottom"><div></div></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
     <div class="section" id="section2">
-      <div class="container">
+      <div class="container process-container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-6 process-details-container">
             <div class="process-details" data-id="1">
+              <img src="images/inquiry.jpg" alt="Inquiry">
               <h2>Inquiry</h2>
               <p>This is where the project starts in our office. Weather it be an email, phone call,text message, or a friendly conversation. The project starts when we hear fromyou. That is when we start asking and answering questions and gaining theconfidence of our clients.</p>
+              <span>01</span>
             </div>
             <div class="process-details" data-id="2">
+              <img src="images/kickoff-meeting.jpg" alt="Kickoff Meeting">
               <h2>Kickoff Meeting</h2>
               <p>One of the most critical parts of a successful project is making sure thateveryone knows what is expected and when it should be completed. The kickoffmeeting is meant to do just that. No matter how big or small a project is, allstakeholders should be aware that the project is moving forward and what theirrole in the project will be.</p>
+              <span>02</span>
             </div>
             <div class="process-details" data-id="3">
+              <img src="images/communication.jpg" alt="Regular Communication">
               <h2>Regular Commuinication</h2>
               <p>Things change and evolve during a project. Our goal at Plan North Engineers isto keep ahead of the project, and proactively maintain our role. This can meanweekly planning meetings for larger projects, or feasibility conversations onsmaller projects.</p>
+              <span>03</span>
             </div>
             <div class="process-details" data-id="4">
+              <img src="images/milestone-meetings.jpg" alt="Milestone Meetings">
               <h2>Milestone Meetings</h2>
               <p>Milestones are setup at the beginning of the project to ensure ongoingattention to the project so that all aspects of the design are thoroughly plannedand calculated. The milestone meetings are also setup so that stakeholders thataren’t in the day to day are made aware of the evolution of the project andensure that all parties are in agreement with regard to the day to day decisionsthat come about during the regular communications.</p>
+              <span>04</span>
             </div>
             <div class="process-details" data-id="5">
+              <img src="images/final-review.jpg" alt="Final Review">
               <h2>Final Review</h2>
               <p>One of the most critical steps in the project is coming together at the end. AtPlan North Engineers, this is where we review the project scope and verify thatwe have met and exceeded the expectations of our clients.</p>
+              <span>05</span>
             </div>
             <div class="process-details" data-id="6">
+              <img src="images/delivered.jpg" alt="Delivered">
               <h2>Delivered</h2>
               <p>Our finished product. This is what gets us excited. Plan North Engineersproduces easy to read, complete, and well thought out plans detailing theprojects of our clients.</p>
+              <span>06</span>
             </div>
             <div class="process-steps">
               <div class="process-col left">
@@ -142,8 +190,13 @@
               </div>
             </div>
           </div>
-          <div class="col-6 process-img">
-            <img src="images/process-img.png" alt="">
+          <div class="col-6 process-image">
+            <div class="process-flex-container">
+              <div class="process-flex-item process-shuffle-left"><div></div></div>
+              <div class="process-flex-item process-shuffle-right"><div></div></div>
+              <div class="process-flex-item process-shuffle-left"><div></div></div>
+              <div class="process-flex-item process-shuffle-right"><div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -151,15 +204,97 @@
     <div class="section" id="section3">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h1>Section 4</h1>
+          <div class="col-8 gallery-stagger">
+            <div class="loading"></div>
+            <div class="siema-wrapper">
+              <div class="siema">
+                <div><img src="images/gallery/Beyster/01.jpg" alt="Project Image" /></div>
+                <div><img src="images/gallery/Beyster/04.jpg" alt="Project Image" /></div>
+                <div><img src="images/gallery/Beyster/03.jpg" alt="Project Image" /></div>
+                <div><img src="images/gallery/Beyster/04.jpg" alt="Project Image" /></div>
+                <div><img src="images/gallery/Beyster/05.jpg" alt="Project Image" /></div>
+                <div><img src="images/gallery/Beyster/06.jpg" alt="Project Image" /></div>
+              </div>
+            </div>
+            <div class="slider-controls gallery-stagger">
+              <button class="prev"><img src="https://beta.power-viz.com/testing/icon-chevron-left.svg" alt=""></button>
+              <div class="bullets"></div>
+              <button class="next"><img src="https://beta.power-viz.com/testing/icon-chevron-right.svg" alt=""></button>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="gallery-thumbnail-container">
+              <div class="gallery-thumbnail active" data-gallery="gallery1"></div>
+              <div class="gallery-thumbnail" data-gallery="gallery2"></div>
+              <div class="gallery-thumbnail" data-gallery="gallery3"></div>
+              <div class="gallery-thumbnail" data-gallery="gallery4"></div>
+              <div class="gallery-thumbnail" data-gallery="gallery5"></div>
+              <div class="gallery-thumbnail" data-gallery="gallery6"></div>
+              <div class="gallery-description">
+                <h3 id="header" class="gallery-stagger">Beyster</h3>
+                <p id="client" class="gallery-stagger">Sanctuary Architects | 2019</p>
+                <p id="description" class="gallery-stagger">Beyster Residence is a complete teardown of two existing projects and the rebuild of a new single-family residence overlooking the beautiful Torrey Pines Reserve in Del Mar, California. This was a fully integrated BIM Project.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="map-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-9">
+            <img src="images/license-map.svg" alt="License Map">
+          </div>
+          <div class="col-3">
+            <h3> Currently Licensed</h3>
+            <ul>
+              <div>
+                <li>Arizona</li>
+                <li>California</li>
+                <li>Colorado</li>
+                <li>Florida</li>
+                <li>Idaho</li>
+                <li>Indiana</li>
+                <li>Maryland</li>
+                <li>Montana</li>
+              </div>
+              <div>
+                <li>Nevada</li>
+                <li>New Mexico</li>
+                <li>Oregon</li>
+                <li>Texas</li>
+                <li>Utah</li>
+                <li>Washington</li>
+                <li>Wyoming</li>
+              </div>
+            </ul>
+            <h3>Pending</h3>
+            <ul>
+              <li>Connecticut</li>
+              <li>Georgia</li>
+              <li>Michigan</li>
+              <li>Virginia</li>
+            </ul>
+            <h3>Forcasted</h3>
+            <ul>
+              <li>Alaska</li>
+              <li>Hawaii</li>
+              <li>Illinois</li>
+              <li>Massachusetts</li>
+              <li>New Jersey</li>
+              <li>New York</li>
+              <li>North Carolina</li>
+              <li>Ohio</li>
+              <li>Pennsylvania</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
     <div class="section" id="contact-section">
       <div class="container">
-        <div class="row">
+        <div class="row contact-flex">
           <div class="col-7">
             <form id="contact-form" name="contact-form" action="mail.php" method="POST">
               <input type="text" name="name" placeholder="NAME*" required>
@@ -191,24 +326,12 @@
     </script>
   </p>
 </footer>
-<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
-<script type="text/javascript" src="js/fullpage.min.js"></script>
-<script type="text/javascript" src="js/TweenMax.min.js"></script>
-<script type="text/javascript" src="js/DrawSVGPlugin.min.js"></script>
-<script type="text/javascript" src="js/script.min.js"></script>
-<script type="text/javascript">
-    var myFullpage = new fullpage('#fullpage', {
-        anchors: ['Top','Services', 'Process', 'Projects', 'Contact'],
-        navigation:true,
-        slidesNavigation: true,
-        navigationTooltips: ['Top','Services', 'Process', 'Projects', 'Contact'],
-        showActiveTooltip: false,
-        scrollOverflow:true,
-        paddingTop: '100px',
-        paddingBottom: '40px',
-        menu: '#menu'
-    });
-</script>
-
+  <!-- js -->
+  <script type="text/javascript" src="js/scrolloverflow.min.js"></script>
+  <script type="text/javascript" src="js/fullpage.min.js"></script>
+  <script type="text/javascript" src="js/siema.min.js"></script>
+  <script type="text/javascript" src="js/TweenMax.min.js"></script>
+  <script type="text/javascript" src="js/DrawSVGPlugin.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
