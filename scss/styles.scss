@@ -632,9 +632,12 @@ $description-margin: 5px 0;
     margin-bottom: 10px;
     float: left;
     clear: both;
-    &:nth-child(1) {
+    &.licensed {
       margin-top: 0;
       border-bottom: solid 3px #009ec9;
+    }
+    &.pending {
+      border-bottom: solid 3px #caf5ff;
     }
   }
   ul {
