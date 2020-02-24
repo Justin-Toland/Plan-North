@@ -44,8 +44,6 @@ body {
   font-weight: $font-weight-extra-light;
   line-height: $font-height;
   letter-spacing: 3px;
-  text-transform: uppercase;
-
 }
 
 a {
@@ -74,9 +72,11 @@ h1 {
 }
 
 h2 {
+  text-transform: uppercase;
 }
 
 h3 {
+  text-transform: uppercase;
 }
 
 h4 {
@@ -131,6 +131,7 @@ p {
   top: 20px;
   left: 40px;
   z-index: 2;
+  text-transform: uppercase;
   &:before {
       content: '';
       position: absolute;
@@ -273,6 +274,7 @@ ul.grid-nav {
       font-size: .8em;
       padding: 5px 16px;
       text-decoration: none;
+      text-transform: uppercase;
     }
     &.active {
       border-bottom: solid white 1px;
@@ -369,10 +371,10 @@ ul.grid-nav {
       font-weight: $font-semi-bold;
       margin-top: 0;
       color: $blue;
+      text-transform: uppercase;
     }
     p {
-      font-size: .7em;
-      line-height: 2em;
+      font-size: .8em;
       margin: 0;
       text-transform: none;
     }
@@ -421,6 +423,7 @@ ul.grid-nav {
       display: table-cell;
       vertical-align: middle;
       text-align: right;
+      text-transform: uppercase;
     }
     span + span {
       position: absolute;
@@ -575,15 +578,16 @@ $description-margin: 5px 0;
   padding: 5px;
   #header {
     margin: $description-margin;
-
+    text-transform: uppercase;
   }
   #client {
     margin: $description-margin;
     color: $blue;
+    text-transform: uppercase;
   }
   #description {
     margin: $description-margin;
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
 }
 
@@ -646,7 +650,7 @@ $description-margin: 5px 0;
     padding: 0;
     clear: both;
     li {
-      font-size: .65em;
+      font-size: .8em;
       line-height: 1.5em;
     }
     div {
@@ -753,7 +757,7 @@ $description-margin: 5px 0;
     }
     p:nth-child(5) {
       font-size: .8em;
-      text-transform: lowercase;
+      text-transform: none;
       position: relative;
       margin: 2.3em 0 0 0;
       &:before {
